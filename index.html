@@ -1,411 +1,772 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+    <title>JavaScript Language Tooling</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Benjamin Woodruff">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>JavaScript Language Tooling</h2>
+          <h3>Benjamin Woodruff</h3>
+          <small style="font-style: italic;">
+            http://benjam.info
+          </small>
+        </section>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
+        <section>
+          <h2>My Background</h2>
+          <ul>
+            <li>Internship at Facebook
+            <li>Worked on "JS Infrastructure"
+            <li>Moved Facebook.com to ESLint
+          </ul>
+          <img src="img/eslint.png" height="150px"></img>
+        </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+        <section>
+          <h2>Why JavaScript?</h2>
+          <ul>
+            <li>Lingua Franca of the Web
+            <li><em>Modern</em> JS is great language!
+            <li>Reasonably fast
+            <li>Multiple independent implementations
+            <li>Tons of existing tooling to build on top of
+            <li class="fragment">Hacker News likes it
+          </ul>
+        </section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
+        <section>
+          <h2>In This Talk...</h2>
+          <ul>
+            <li>Language theory
+            <li>Let's fix JS
+            <li>Tools you can use today
+          </ul>
+        </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+        <section>
+          <h2>Programming Languages 101</h2>
+          <p style="font-size: 90%">
+          Code → Tokens → AST → Constraints → Transformer → Interpreter
+          <p><small><em>(Some of these are optional)</em></small>
+          <p class="fragment" style="font-size: 90%">
+          Code →
+          <span style="visibility: hidden; padding: 0">Tokens →</span>
+          AST →
+          <span style="visibility: hidden; padding: 0">Constraints →</span>
+          Transformer →
+          <span style="visibility: hidden; padding: 0">Interpreter</span>
+        </section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
+        <section>
+          <h2>Lexing and Parsing</h2>
+          <strong>Goal:</strong> Convert text to an easily traversed
+          representation.
+        </section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+        <section>
+          <h2>Lexing produces tokens</h2>
+          <pre><code data-trim>
+/\s+/                => whitespace
+/"[^"]*"/            => string
+/#.+$/               => comment
+/[_a-z][_a-z0-9]*/i  => identifier
+/[0-9]+/             => integer
+          </code></pre>
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+          ⇩
+          
+          <pre><code class="hljs nohighlight">_"foo" 42bar#buzz</code></pre>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+          ⇩
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+          <pre><code data-trim class="hljs nohighlight">
+          indentifier string whitespace integer identifier comment
+          </code></pre>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+          ⇩
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
+          <pre><code data-trim class="hljs nohighlight">
+          indentifier string            integer identifier
+          </code></pre>
+        </section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
+        <section>
+          <h2>Abstract Syntax Tree</h2>
+          <strong>Goal:</strong> Convert the tokens to a tree
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
+          <pre><code data-trim class="javascript">
+function parse(tokens) {
+  const body = [];
+  while (tokens.hasNext()) {
+    body.push(parseStatement(tokens));
+  }
+  return {type: 'Program', body};
+}
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
+function parseStatement(tokens) {
+  if (tokens.next().type === 'FunctionKeyword') {
+    return parseFunction();
+  } else if (tokens.next().type === 'Identifier') {
+    return parseCallExpression();
+  } else {
+    throw new SyntaxError();
   }
 }
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+function parseFunction(tokens) {
+  const args = [];
+  const body = [];
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+  tokens.consume('FunctionKeyword');
+  tokens.consume('(');
+  while (tokens.next() !== ')') {
+    args.push(parseExpression());
+  }
+  tokens.consume(')');
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+  tokens.consume('{');
+  while (tokens.next() !== '}') {
+    body.push(parseExpression());
+  }
+  tokens.consume('}');
+  return {type: 'FunctionDeclaration', args, body};
+}
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+// ...
+          </code></pre>
+          <p>Recursive tree traversal!
+        </section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+        <section>
+          <h2>Problem</h2>
+          <ul>
+            <li>That's a lot of code to write
+            <li>Programmers are lazy
+          </ul>
+        </section>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
+        <section>
+          <h2>Solution</h2>
+          <p>
+          <ul>
+            <li>We're compiler writers
+            <li>Let's make a shorthand language (DSL)
+            <li>And a parser-generator
+          </ul>
+        </section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+        <section>
+          <img style="height: 500px" src="img/ismeta.png"></img>
+        </section>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+        <section>
+          <h2>PEG.js</h2>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
+          <pre><code data-trim class="hljs nohighlight">
+program
+  = _ body:(s:statement _ {return s;})+ {
+    return {type: 'Program', body: body};
+  }
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+_ 'whitespace'
+  = [ \t\r\n]*
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+statement
+  = function
+  / callExpression
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
+function
+  = 'function' _ '('
+  _ args:(expr:expression _ {return expr;})*
+  _ ')' _ '{'
+  _ body:(s:statement _ {return s;})*
+  _ '}' {
+    return {
+      type: 'FunctionDeclaration',
+      args: args,
+      body: body
+    };
+  }
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
+expression
+  = 'expr'
 
-			</div>
+callExpression
+  = 'fname' _ '('
+  _ args:(expr:expression _ {return expr;})*
+  _ ')' {
+    return {
+      type: 'CallExpression',
+      args: args
+    };
+  }
+          </code></pre>
+        </section>
 
-		</div>
+        <section>
+          <iframe class="stretch" data-src="http://pegjs.org/online"></iframe>
+        </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section>
+          <h2>Problem</h2>
+          <p>Some constructs aren't "context free", and can't be parsed this
+          way.
 
-		<script>
+          <pre><code data-trim class="python">
+def foo():
+    bar()
+          </code></pre>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+          <p><strong>Example:</strong> Identation-based languages don't have
+          clear start/end tokens. How do you tell when to stop parsing a
+          construct?
+        </section>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+        <section>
+          <h2>Cheating</h2>
+          <p>Extend the lexer, and insert indent/dedent tokens!
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+          <pre style="width: 450px; float: left;"><code data-trim class="python">
+def foo():
+    bar()
+          </code></pre>
 
-		</script>
+          <pre style="width: 450px; float: right;"><code data-trim class="hljs nohighlight">
+1,0-1,3:    NAME    u'def'
+1,4-1,7:    NAME    u'foo'
+1,7-1,8:    OP      u'('
+1,8-1,9:    OP      u')'
+1,9-1,10:   OP      u':'
+1,10-1,11:  NEWLINE u'\n'
+2,0-2,4:    INDENT  u'    '
+2,4-2,7:    NAME    u'bar'
+2,7-2,8:    OP      u'('
+2,8-2,9:    OP      u')'
+3,0-3,0:    DEDENT  ''
+3,0-3,0:    ENDMARKER   ''
+          </code></pre>
 
-	</body>
+          <p style="clear: both;">
+          <small>Try this at home using <code>import tokenize</code>!</small>
+        </section>
+
+        <section>
+          <h2>Programming Languages 101</h2>
+          <p style="font-size: 90%">
+          Code → Tokens → AST → Constraints → Transformer → Interpreter
+        </section>
+
+        <section>
+          <h2>Constrainer</h2>
+          <ul>
+            <li>Type checking
+            <li>Errors on undefined variables
+            <li>Verify argument counts
+            <li>Stylistic contraints
+          </ul>
+          <p>JavaScript doesn't do any of this. But a linter does!
+        </section>
+
+        <section>
+          <h2>JS: What's broken?</h2>
+
+          <div style="height: 500px; overflow-y: auto; margin: 0;"><ul>
+            <li>Dynamic typing
+            <li>Weak typing
+            <li><code>==</code> vs <code>===</code>
+            <li>Two null-ish types (<code>undefined</code> and
+              <code>null</code>)
+            <li>Callback hell
+            <li>No block-level scoping
+            <li>Implicit globals
+            <li>Wasted bytes in whitespace
+            <li>No modules
+            <li>No classes
+            <li>No private properties
+            <li>Objects must have string keys
+            <li><code>for..in</code>
+            <li><code>with</code> blocks
+            <li>ASI (Automatic Semicolon Insertion)
+            <li>Function Expression and Statement forms
+            <li><code>new</code> keyword
+            <li>Implicit and explicit <code>eval</code>
+            <li><code>switch</code>-<code>case</code>-<code>break</code>
+              fallthrough
+            <li>Octal literals
+          </ul></div>
+        </section>
+
+        <section>
+          <img style="height: 500px" src="img/goodparts.jpg"></img>
+        </section>
+
+        <section>
+          <h2>Fixing it</h2>
+          <ul>
+            <li>Add our own contrainer
+            <li>Use ES2015 and ES2016
+            <li>"Minify" our JavaScript
+            <li>Don't write JavaScript in JavaScript
+          </ul>
+        </section>
+
+        <section>
+          <h2>Round One</h2>
+          Minifiers and Linters
+        </section>
+
+        <section>
+          <h2>Low-hanging fruit: Minification</h2>
+          <ul>
+            <li>Remove comments and whitespace
+            <li>Tokenize and strip
+              <ul>
+                <li>Pro: Easy to implement
+                <li>Pro: Very fast
+                <li>Pro: Easy to perform on a stream
+                <li>Con: Missed opportunities
+              </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Modern Minification</h2>
+          <ul>
+            <li>Build an AST
+            <li>Peephole optimization (syntactic find-replace)
+            <li>"Mangle" local variable names
+            <li>Remove obviously dead code
+          </ul>
+        </section>
+
+        <section>
+          <h2>Advanced Minification</h2>
+          <p>Static analysis of dynamic languages is hard.
+
+          <pre><code data-trim class="javascript">
+var obj = {foo: 1, bar: 2};
+console.log(obj[prompt('What property should I access?')]);
+          </code></pre>
+
+          <p>Akin to the halting problem
+
+          <div class="fragment" data-fragment-index="1">
+            <hr/>
+            <ul>
+              <li>Make basic well-defined assumptions about the code
+              <li>Add annotations to provide hints about usage
+              <li class="fragment" data-fragment-index="2">
+                Moderate improvement, lots of extra work
+              <li class="fragment" data-fragment-index="2">
+                Usually avoided
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Build your own AST</h2>
+          <ul>
+            <li>Google Closure Compiler <small>(GCC)</small>
+            <li>Uglify <small>(including v2)</small>
+            <li>YUI Compressor
+            <li>JSMin
+          </ul>
+        </section>
+
+        <section>
+          <img style="" src="img/standards.png"></img>
+        </section>
+
+        <section>
+          <h2>SpiderMonkey/ESTree</h2>
+          <em>Let's steal Mozilla's format</em>
+          <img class="stretch" src="img/estree.png"></img>
+        </section>
+
+        <section>
+          <h2>Popular Parsers</h2>
+          <ul>
+            <li>Esprima <small>(ESTree)</small>
+            <li>Acorn <small>(ESTree)</small>
+            <li>Babylon <small>(Acorn fork + ES2015/2016)</small>
+            <li>Espree <small>(Esprima fork + ES2015)</small>
+            <li>Shift <small>(New AST format)</small>
+          </ul>
+        </section>
+
+        <section>
+          <h2>http://astexplorer.net/</h2>
+          <iframe src="http://astexplorer.net/" class="stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Linting</h2>
+          <img class="stretch" src="img/lintbrush.jpg"></img>
+        </section>
+
+        <section>
+          <h2>Linting</h2>
+          <ul>
+            <li>Pattern-match parts of the AST
+            <li>Generate warnings based on matches
+          </ul>
+        </section>
+
+        <section>
+          <h2>Linting</h2>
+          <pre><code data-trim style="font-size: 90%" class="javascript">
+module.exports = function(context) {
+
+    return {
+
+        "MemberExpression": function(node) {
+
+            if (node.object.name === "console") {
+                context.report(node, "Unexpected console statement.");
+            }
+
+        }
+    };
+
+};
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Popular Linters</h2>
+          <ul>
+            <li>JSLint
+            <li>JSHint
+            <li>JSCS
+            <li>ESLint
+            <li class="fragment">Babel <small>(maybe)</small>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Static typing</h2>
+          <ul>
+            <li>TypeScript <small>(Language superset)</small>
+            <li>Flow <small>(Language extension)</small>
+            <li>Closure Compiler <small>(Magic comments)</small>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Flow: Type Inference</h2>
+          <pre><code data-trim class="javascript">
+/* @flow */
+function foo(x) {
+  return x * 10;
+}
+foo('Hello, world!');
+          </code></pre>
+          <pre><code data-trim class="hljs nohighlight">
+hello.js:5:5,19: string
+This type is incompatible with
+  hello.js:3:10,15: number
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Flow: Type Annotations</h2>
+          <pre><code data-trim class="javascript">
+/* @flow */
+function foo(x: string, y: number): string {
+  return x.length * y;
+}
+foo('Hello', 42);
+          </code></pre>
+          <pre><code data-trim class="hljs nohighlight">
+hello.js:3:10,21: number
+This type is incompatible with
+  hello.js:2:37,42: string
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Programming Languages 101</h2>
+          <p style="font-size: 90%">
+          Code → Tokens → AST → Constraints → Transformer → Interpreter
+        </section>
+
+        <section>
+          <h2>CoffeeScript</h2>
+          <ul>
+            <li>Uses jison parser-generator (Bison in JavaScript)
+            <li>Changes syntax (ruby-like), but (usually) not semantics
+            <li>Fresh start: can fix many JS issues
+            <li>Influential in the ES2015 standard
+          </ul>
+        </section>
+
+        <section>
+          <h2>Compile-to-JS Problems</h2>
+          <ul>
+            <li>Debugging
+            <li>Debugging
+            <li>Debugging
+          </ul>
+        </section>
+
+        <section>
+          <h2>Source Maps</h2>
+          <img class="stretch" src="img/sourcemaps.gif"></img>
+        </section>
+
+        <section>
+          <h2>ES2015</h2>
+          <pre style="width: 400px; float: left; font-size: 50%;"><code data-trim class="javascript">
+function update(callback) {
+  $.ajax({
+    url : 'example.com',
+    type: 'GET',
+    success: function(data) {
+      console.log(data.something);
+      callback(data);
+    }
+  })
+}
+          </code></pre>
+          <pre style="width: 550px; float: right; font-size: 50%;"><code data-trim class="javascript">
+function update() {
+  return $.ajax('example.com').then((data) => {
+    console.log(data.something);
+    return data;
+  }
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>ES2016</h2>
+          <pre style="width: 500px; float: left; font-size: 45%;"><code data-trim class="javascript">
+function update() {
+  return $.ajax('example.com').then((data) => {
+    console.log(data.something);
+    return data;
+  }
+}
+          </code></pre>
+          <pre style="width: 450px; float: right; font-size: 45%;"><code data-trim class="javascript">
+async function update() {
+  const data = await $.ajax('example.com');
+  console.log(data.something);
+  return data;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Problem?</h2>
+        </section>
+
+        <section>
+          <h2>JS-to-JS Compilation</h2>
+          <ul>
+            <li>Flow and Typescript
+            <li>Traceur
+            <li>Babel
+          </ul>
+        </section>
+
+        <section>
+          <h2>Babel</h2>
+          <ul style="font-size: 70%; -moz-column-count: 2; column-count: 2; -webkit-column-count: 2;">
+            <li>Array comprehensions
+            <li>Arrow functions
+            <li>Async functions
+            <li>Async generator functions
+            <li>Classes
+            <li>Class properties
+            <li>Computed property names
+            <li>Constants
+            <li>Decorators
+            <li>Default parameters
+            <li>Destructuring
+            <li>Exponentiation operator
+            <li>For-of
+            <li>Function bind
+            <li>Generators
+            <li>Generator comprehensions
+            <li>Let scoping
+            <li>Modules
+            <li>Module export extensions
+            <li>Object rest/spread
+            <li>Property method assignment
+            <li>Property name shorthand
+            <li>Rest parameters
+            <li>React
+            <li>Spread
+            <li>Template literals
+            <li>Type annotations
+            <li>Unicode regex
+          </ul>
+        </section>
+
+        <section>
+          <h2>Miss pointers?</h2>
+        </section>
+
+        <section>
+          <h2>Emscripten</h2>
+          <iframe data-src="http://kripken.github.io/box2d.js/webgl_demo/box2d.html"
+            class="stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Emscripten</h2>
+          <iframe src="https://repl.it/BSdR" class="stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>ASM.js</h2>
+          <pre><code style="font-size: 80%;" data-trim class="javascript">
+function GeometricMean(stdlib, foreign, buffer) {
+  "use asm";
+
+  var exp = stdlib.Math.exp;
+  var log = stdlib.Math.log;
+  var values = new stdlib.Float64Array(buffer);
+
+  function logSum(start, end) {
+    start = start|0;
+    end = end|0;
+
+    var sum = 0.0, p = 0, q = 0;
+
+    // asm.js forces byte addressing of the heap by requiring shifting by 3
+    for (p = start << 3, q = end << 3; (p|0) < (q|0); p = (p + 8)|0) {
+      sum = sum + +log(values[p>>3]);
+    }
+
+    return +sum;
+  }
+
+  function geometricMean(start, end) {
+    start = start|0;
+    end = end|0;
+
+    return +exp(+logSum(start, end) / +((end - start)|0));
+  }
+
+  return { geometricMean: geometricMean };
+}
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>ASM.js</h2>
+        <ul>
+          <li>Strict subset of ES3
+          <li>Works in every browser
+          <li>Fully sandboxed
+          <li>Firefox AOT compiles to native code
+        </ul>
+        <p><q>"usually within a factor of 2 slowdown over native compilation
+          with clang"</q>
+      </section>
+
+      <section>
+        <h2>JS Compilation Output</h2>
+        AST → Transform → ??? → JavaScript
+        <div class="fragment">
+          <hr/>
+          <ul>
+            <li>String Concatenation
+            <li>AST Reprinter
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Recast</h2>
+        <pre><code style="font-size: 120%;" data-trim class="javascript">
+        var output = recast.print(ast).code;
+        </code></pre>
+      </section>
+
+      <section>
+        <iframe src="http://astexplorer.net/" class="stretch"></iframe>
+        <p style="text-align: right;">
+        <small><em>See Also:</em> Effective JavaScript Codemods by @cpojer</small>
+      </section>
+
+      <section>
+        <h2>Takeaway</h2>
+        <ul>
+          <li><em>Modern</em> JS is pretty cool
+          <li>JavaScript's faults are fixable
+          <li>JS is an awesome compilation target
+      </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>
